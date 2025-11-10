@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minha Landing Page</title>
+</head>
+<body>
+  <h1>Bem-vindo à minha Landing Page!</h1>
+
+  <p>Digite seu nome:</p>
+  <input type="text" id="nomeInput" placeholder="Seu nome">
+  <button id="btnEnviar">Enviar</button>
+
+  <p id="mensagem"></p>
+
+  <script>
+    // Seleciona elementos do HTML pelo ID
+    const btn = document.getElementById("btnEnviar"); // botão
+    const input = document.getElementById("nomeInput"); // campo de texto
+    const mensagem = document.getElementById("mensagem"); // parágrafo onde a mensagem aparecerá
+
+    // Adiciona um "ouvinte de evento" ao botão
+    btn.addEventListener("click", () => {
+      const nome = input.value; // pega o valor digitado no input
+
+      // Verifica se o usuário digitou algo
+      if(nome) {
+        // Se digitou, mostra uma mensagem personalizada
+        mensagem.textContent = `Olá, ${nome}! Obrigado por visitar nossa landing page.`;
+      } else {
+        // Se não digitou nada, mostra alerta pedindo para digitar
+        mensagem.textContent = "Por favor, digite seu nome!";
+      }
+    });
+  </script>
+</body>
+</html>
